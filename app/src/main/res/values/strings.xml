@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">ngawi</string>
+    <string name="length">lebar</string>
+    <string name="calculate">hitung</string>
+    <string name="height">tinggi</string>
+    <string name="result">hasil</string>
+    <string name="width">panjang</string>
+    <string name="biodata">biodata</string>
+    <string name="alamat">alamat</string>
+    <string name="tanggal_lahir">/Tanggal Lahir</string>
+    <string name="pilih_disini">Pilih Disini</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="submit">submit</string>
+    <string name="hasil">Result</string>
+    <string name="simpan">Simpan</string>
+    <string name="output_alamat">Alamat:</string>
+    <string name="output_nomor_telp">Nomor Telp:</string>
+    <string name="output_tanggal_lahir">Tanggal Lahir:</string>
+    <string name="output_nama">Nama:</string>
+    <string name="output_biodata">Output Biodata</string>
+    <string name="contoh_085155225890">Contoh: (085155225890)</string>
+    <string name="phone_number">Nomor Telepon:</string>
+    <string name="contoh_jl_danau_segara_anak_rt99_rw78_kedungkandang_kota_malang_jawa_timur">Contoh: (Jl Danau Segara anak Rt99 Rw78 Kedungkandang Kota Malang Jawa Timur)</string>
+    <string name="dd_mm_yyyy">DD-MM-YYYY</string>
+    <string name="addres">Alamat:</string>
+    <string name="date">Tanggal Lahir:</string>
+    <string name="nama_belakang">Nama Belakang</string>
+    <string name="nama_depan">Nama Depan</string>
+    <string name="nama_lengkap">Nama Lengkap:</string>
+    <string name="bio_text">bio_text</string>
+</resources>

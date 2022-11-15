@@ -1,0 +1,95 @@
+package com.example.ngawi;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    private EditText edtWidth;
+    private EditText edtHeight;
+    private EditText edtLength;
+    private Button btnCalculate;
+    private TextView tvResult;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        edtWidth = findViewById(R.id.edt_width);
+        edtHeight = findViewById(R.id.edit_height);
+        edtLength = findViewById(R.id.edt_length);
+        btnCalculate = findViewById(R.id.btn_calculate);
+        tvResult = findViewById(R.id.tv_result);
+        btnCalculate.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View V) {
+        if (V.getId() == R.id.btn_calculate){
+            String inputLength =
+                    edtLength.getText().toString().trim();
+            String inputWidth =
+                    edtWidth.getText().toString().trim();
+            String inputHeight =
+                    edtHeight.getText().toString().trim();
+
+
+            boolean isEmptyFeilds = false;
+            boolean isInvaidDouble = false;
+
+            if (TextUtils.isEmpty(inputLength)){
+                isEmptyFeilds = true;
+                edtLength.setError("Field ini tidak boleh kosong");
+            }
+
+            if (TextUtils.isEmpty(inputWidth)) {
+                isEmptyFeilds = true;
+                edtWidth.setError("Field ini tidak boleh kosong");
+            }
+
+            if (TextUtils.isEmpty(inputHeight)) {
+                isEmptyFeilds = true;
+                edtHeight.setError("Field ini tidak boleh kosong");
+            }
+
+            Double length = toDouble(inputLength);
+            Double width = toDouble(inputWidth);
+            Double height = toDouble(inputHeight);
+
+            if (length == null) {
+                isInvaidDouble = true;
+                edtLength.setError("Field ini harus berupa nomor yang valdi");
+            }
+            if (width == null) {
+                isInvaidDouble = true;
+                edtWidth.setError("Field ini harus berupa nomor yang valdi");
+            }
+            if (height == null) {
+                isInvaidDouble = true;
+                edtHeight.setError("Field ini harus berupa nomor yang valdi");
+            }
+
+            if (!isEmptyFeilds && !isInvaidDouble) {
+
+                double volume = length * width * height;
+
+                tvResult.setText(String.valueOf(volume));
+
+            }
+        }
+
+    }
+
+    private Double toDouble(String inputLength) {
+        try {
+            return Double.valueOf(inputLength);
+        } catch (NumberFormatException e) {
+            return null;
+        }
+    }
+}
